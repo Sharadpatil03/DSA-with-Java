@@ -7,7 +7,7 @@ public class Bubble_Sort {
     
     public static void bubbleSort(int []arr){
         int n=arr.length;
-
+        boolean didSwap=false;  //flag to check if array is alrady sorted or not.
         for(int i=n-1; i>=1; i--){  //starting from end
 
             //now start from start and do adjacent swap if the elements are not in proper form
@@ -18,7 +18,12 @@ public class Bubble_Sort {
                     int temp=arr[j];
                     arr[j]=arr[j+1];
                     arr[j+1]=temp;
+                    didSwap=true;
                 }
+            }
+
+            if(!didSwap){
+                return ;
             }
 
         }
