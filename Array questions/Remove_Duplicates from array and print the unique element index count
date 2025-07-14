@@ -1,0 +1,28 @@
+Input: nums = [0,0,1,1,1,2,2,3,3,4]
+Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
+Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+
+
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        
+        // brute force : use set data structure and then add the elements into it and at the end return the size of set, it will be the no of unique element count
+
+
+        //optimal solution  : Using two pointer
+        int n=nums.length;
+        int i=0;
+        for(int j=1; j<n; j++){
+            if(nums[i]!=nums[j]){
+                //add that next unique element in front of i and then do i++ 
+                nums[i+1]=nums[j];
+                i++;
+            }
+        }
+
+        return i+1;  //initially i was zero so did here i+1
+
+    }
+}
