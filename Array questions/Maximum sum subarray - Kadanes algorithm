@@ -31,10 +31,6 @@ class Solution {
                 //ansStart=start;
                 //ansEnd=i;
             }
-
-            if(sum < 0){ //If all the elements in array are negative then..
-                sum=0;
-            }
         }
 
         if(maxSum <0){  //If all the elements in array are negative.
