@@ -15,20 +15,34 @@ class Solution {
         // }
         // return maxSum;
 
+
         //Optimal solution : Using Kadanes algorithm   TC: o(n)
         int n=nums.length;
         int maxSum=Integer.MIN_VALUE;
         int sum=0;
+        // int ansStart=-, ansEnd=-1 , start;
         for(int i=0; i<n; i++){
+            // if(sum==0) {
+            //     start=i;
+            // }
             sum+=nums[i];
             if(sum >maxSum){
                 maxSum=sum;
+                //ansStart=start;
+                //ansEnd=i;
             }
 
-            if(sum < 0){
+            if(sum < 0){ //If all the elements in array are negative then..
                 sum=0;
             }
+        }
+
+        if(maxSum <0){  //If all the elements in array are negative.
+            maxSum=0;
         }
         return maxSum;
     }
 }
+
+
+//The commented part in code for finding that subarray
