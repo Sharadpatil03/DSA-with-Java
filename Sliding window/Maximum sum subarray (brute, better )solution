@@ -1,0 +1,59 @@
+import java.util.*;
+
+public class Main {
+  
+  public static int MaxSumFromSubarray(int arr[]){
+    //Brute force solution this is (optimal sol is using Kadanes algorithm)
+    
+    // int maxSum=Integer.MIN_VALUE;
+    // for(int i=0;i<arr.length; i++){
+      
+    //   for(int j=i; j<arr.length; j++){
+        
+    //     int sum=0;
+    //     for(int k=i; k<=j; k++){
+    //       sum+=arr[k];
+          
+    //       maxSum =Math.max(maxSum, sum);
+    //     }
+    //   }
+    // }
+    
+    
+    // return maxSum;
+    
+    
+    //Better solution :
+    int maxSum=0;
+    for(int i=0; i<arr.length; i++){
+      int sum=0;
+      for(int j=i; j<arr.length; j++){
+        sum+=arr[j];
+        
+        maxSum=Math.max(maxSum, sum);
+        
+      }
+      
+    }
+    return maxSum;
+    
+  }
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      
+      int arr[]= new int[n];
+      
+      //taking input   Array
+      for(int i=0; i<n; i++){
+        arr[i]=sc.nextInt();
+      }
+      
+     int result =MaxSumFromSubarray(arr);
+     System.out.print(result);
+     
+      
+     
+      
+  }
+}
